@@ -19,7 +19,7 @@ jobs:
     - name: Build .app (unsigned)
       run: |
         xcodebuild \
-          -project ThreeOneOSFive.xcodeproj \
+          -project 3105-1.1.1/ThreeOneOSFive.xcodeproj \
           -scheme 3105 \
           -configuration Release \
           -sdk iphoneos \
@@ -32,10 +32,10 @@ jobs:
       run: |
         mkdir -p Payload
         cp -R build/Build/Products/Release-iphoneos/*.app Payload/
-        zip -r 3105.ipa Payload
+        zip -r expoler-20.ipa Payload
       
     - name: Upload IPA
       uses: actions/upload-artifact@v4
       with:
-        name: REGSXD-unsigned-ipa
-        path: 3105.ipa
+        name: expoler-20-unsigned-ipa
+        path: expoler-20.ipa
